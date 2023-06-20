@@ -81,3 +81,10 @@ On the windows Lab server run the MSI
 Any issues client logs are located here
 
     C:\Windows\System32\config\systemprofile\AppData\Local\FleetDM\Orbit\Logs
+
+
+**Issue**
+
+had to use insecure validation 
+
+    fleetctl package --type=msi --fleet-url=https://fleet.example.com:8080 --enroll-secret=abcDEF123456789 --insecure
