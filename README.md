@@ -59,14 +59,25 @@ Extract and add either a path variable to the folder the exe is in or put it in 
 
 Ensure Docker is running 
 
-Go to the webpage fpr fleet > add hosts > windows and copy and pase the line 
+Go to the webpage fpr fleet > add hosts > advanced and copy and pase the line 
 
 It will look like this
 
-    fleetctl package --type=msi --fleet-url=https://fleet.example.com:8080 --enroll-secret=ABCcdefghijklmno37y28
+    fleetctl package --type=YOUR_TYPE --fleet-url=https://fleet.example.com:8080    --enroll-secret=abcDEF123456789   --fleet-certificate=PATH_TO_YOUR_CERTIFICATE/fleet.pem
+
+  Modify it to       
+
+    fleetctl package --type=msi --fleet-url=https://fleet.example.com:8080 --enroll-secret=abcDEF123456789 --fleet-certificate='server.pem'
+
+Copy the server.pem from the ubuntu machien you created and cd into the folder where you have copied to (note: this was on my laptop outside of the lab with connectivity to the ubuntu box)
 
 Execute a container will be created and a msi generated this will be then in your users folder location 
 
 Move the MSI to the windows lab server 
 
 On the windows Lab server run the MSI 
+
+
+Any issues client logs are located here
+
+    C:\Windows\System32\config\systemprofile\AppData\Local\FleetDM\Orbit\Logs
